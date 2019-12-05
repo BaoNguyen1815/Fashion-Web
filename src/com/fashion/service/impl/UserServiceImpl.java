@@ -18,24 +18,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void edit(User newUser) {
-		User oldUser = userDao.get(newUser.getId());
-
-		oldUser.setName(newUser.getName());
-		oldUser.setUsername(newUser.getUsername());
-		oldUser.setPassword(newUser.getPassword());
-		if (newUser.getAvatar() != null) {
-			// XOA ANH CU DI
-			String fileName = oldUser.getAvatar();
-			final String dir = "C:/Users/Administrator/Downloads/WebDemo/WebDemo/WebContent/static/admin/images";
-			File file = new File(dir + "/" + fileName);
-			if (file.exists()) {
-				file.delete();
-			}
-			// THEM ANH MOI
-			oldUser.setAvatar(newUser.getAvatar());
-		}
-
-		userDao.edit(oldUser);
+		userDao.edit(newUser);
 	}
 
 	@Override

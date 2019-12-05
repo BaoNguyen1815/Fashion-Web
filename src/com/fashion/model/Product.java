@@ -4,9 +4,9 @@ import java.io.Serializable;
 import java.sql.Date;
 
 public class Product implements Serializable {
-	private String name;
-	private long price;
 	private int id;
+	private String name;
+	private double price;
 	private Category category;
 	private String image;
 
@@ -18,11 +18,11 @@ public class Product implements Serializable {
 		this.name = name;
 	}
 
-	public long getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(long price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 

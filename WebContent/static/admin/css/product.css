@@ -1,0 +1,38 @@
+.container{
+    width: 100%;
+}
+.navbar{
+    display: block;
+    overflow: hidden;
+}
+.navbar div{
+    display: inline-block;
+    margin: 2% 2%;
+    float: right;
+}
+.navbar .logo{
+    float: left !important;
+}
+.product{
+    width: 100%;
+    display: block;
+    grid-template-columns: auto auto ;
+    background-color: white;
+    padding: 0px !important;
+
+}
+
+.product-block{
+    width: 49%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid black;
+    
+    /* font-size: 30px; */
+    text-align: left;
+    float: left;
+}
+.product-info div{
+    margin: 5%;
+}
+
+

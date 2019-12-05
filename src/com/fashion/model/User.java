@@ -7,9 +7,9 @@ public class User implements Serializable {
 	private String name;
 	private String username;
 	private String password;
-	private String avatar;
 	private String rollAdmin;
-	private String activeYN;
+	private String avatar;
+	//private String activeYN;
 	
 
 	public String getRollAdmin() {

@@ -11,11 +11,11 @@ public interface UserDao {
 
 	void delete(int id);
 
-	User get(String username);
+	public User get(String username);
 	
-	User get(int id);
+	public User get(int id);
 
-	List<User> getAll();
+	public List<User> getAll();
 
-	List<User> search(String username);
+	public List<User> search(String username);
 }

@@ -3,162 +3,81 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>Add User</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="application/x-javascript">
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <c:url value="/static/admin/css/admin.css" var="bootstrap"></c:url>
+    <link href="${bootstrap}" rel="stylesheet" type="text/css" media="all">
 
-
-	addEventListener("load", function() {
-		setTimeout(hideURLbar, 0);
-	}, false);
-	function hideURLbar() {
-		window.scrollTo(0, 1);
-	}
-</script>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<c:url value="/static/admin/css/bootstrap.css" var="bootstrap"></c:url>
-<link href="${bootstrap}" rel="stylesheet" type="text/css" media="all">
-<!-- Custom Theme files -->
-<c:url value="/static/admin/css/style.css" var="style"></c:url>
-<link href="${style}" rel="stylesheet" type="text/css" media="all" />
-<!--js-->
-<c:url value="/static/admin/js/jquery-2.1.1.min.js" var="jquery"></c:url>
-<script src="${jquery}"></script>
-<!--icons-css-->
-<c:url value="/static/admin/css/font-awesome.css" var="fontAwesome"></c:url>
-<link href="${fontAwesome}" rel="stylesheet">
-<!--Google Fonts-->
-<link href='//fonts.googleapis.com/css?family=Carrois+Gothic'
-	rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Work+Sans:400,500,600'
-	rel='stylesheet' type='text/css'>
-<!--static chart-->
-<c:url value="/static/admin/js/Chart.min.js" var="chart"></c:url>
-<script src="${chart}"></script>
-<!--//charts-->
-<!-- geo chart -->
-<script src="//cdn.jsdelivr.net/modernizr/2.8.3/modernizr.min.js"
-	type="text/javascript"></script>
-<script>
-	window.modernizr
-	|| document
-		.write('<script src="lib/modernizr/modernizr-custom.js"><\/script>')
-</script>
-<!--<script src="lib/html5shiv/html5shiv.js"></script>-->
-<!-- Chartinator  -->
-<c:url value="/static/admin/js/chartinator.js" var="chartinator"></c:url>
-<script src="${chartinator}"></script>
-<script type="text/javascript">
-	jQuery(function($) {
-
-		var chart3 = $('#geoChart').chartinator(
-			{
-				tableSel : '.geoChart',
-
-				columns : [ {
-					role : 'tooltip',
-					type : 'string'
-				} ],
-
-				colIndexes : [ 2 ],
-
-				rows : [ [ 'China - 2015' ], [ 'Colombia - 2015' ],
-					[ 'France - 2015' ], [ 'Italy - 2015' ],
-					[ 'Japan - 2015' ], [ 'Kazakhstan - 2015' ],
-					[ 'Mexico - 2015' ], [ 'Poland - 2015' ],
-					[ 'Russia - 2015' ], [ 'Spain - 2015' ],
-					[ 'Tanzania - 2015' ], [ 'Turkey - 2015' ] ],
-
-				ignoreCol : [ 2 ],
-
-				chartType : 'GeoChart',
-
-				chartAspectRatio : 1.5,
-
-				chartZoom : 1.75,
-
-				chartOffset : [ -12, 0 ],
-
-				chartOptions : {
-					width : null,
-
-					backgroundColor : '#fff',
-
-					datalessRegionColor : '#F5F5F5',
-
-					region : 'world',
-
-					resolution : 'countries',
-
-					legend : 'none',
-
-					colorAxis : {
-						colors : [ '#679CCA', '#337AB7' ]
-					},
-					tooltip : {
-						trigger : 'focus',
-
-						isHtml : true
-					}
-				}
-			});
-	});
-</script>
-<!--geo chart-->
-
-<!--skycons-icons-->
-<c:url value="/static/admin/js/skycons.js" var="skycons"></c:url>
-<script src="${skycons}"></script>
-<!--//skycons-icons-->
-<c:url value="/static/admin/css/add-user.css" var="addUser"></c:url>
-<link href="${addUser}" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
-	<div class="page-container">
-		<div class="left-content">
-			<div class="mother-grid-inner">
-				<jsp:include page="/view/admin/include/header-main.jsp"></jsp:include>
-				<div class="inner-block">
+    <div class="container">
+        <div class="navbar">
+            <a href="#home">ComeOnBabiii</a>
+            <div class="dropdown">
+                <button class="dropbtn">User
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">User Profile</a>
+                    <a href="#">Setting</a>
+                    <hr />
+                    <a href="#">Log out</a>
+                </div>
+            </div>
+        </div>
 
+        <div class="sidenav">
+            <a href="/Fashion/admin/user/list">User</a>
+            <a href="/Fashion/admin/category/list">Category</a>
+            <a href="/Fashion/admin/product/list">Product</a>
+            <a href="/Fashion/admin/cart/list">Cart</a>
+        </div>
 
-					<div class="signup-block bg">
-						<h2 id="ha">Edit User</h2>
-						<c:url value="/admin/user/edit" var="addUser"></c:url>
-						<form action="${addUser}" method="post" id="ha"
-							enctype="multipart/form-data">
-							<input type="text" readonly="readonly"
-								name="id" value="${user.id }">
-							
-							<label>Name</label> <input type="text"
-								name="name" placeholder="Name" required value="${user.name }">
-								 
-							 <label>Username</label> <input type="text"
-							name="username" placeholder="Username" required value="${user.username }">
-							 
-							 <label >Password</label> <input
-							type="password" name="password" class="lock" value="${user.password }"
-							placeholder="Password">
-							
-							<label>Avatar</label>
-							<input type="file" name="avatar"> 
-							
-							<img height="150" src='<c:url value="/image?fname=${user.avatar }"/>'/>
-							
-							</br> <input type="submit" value="Submit"> </br>
-							<p>${errMsg}</p>
-						</form>
-					</div>
-				</div>
-				<jsp:include page="/view/admin/include/copyright.jsp"></jsp:include>
-			</div>
-		</div>
-		<jsp:include page="/view/admin/include/menu.jsp"></jsp:include>
-		<div class="clearfix"></div>
-	</div>
-	<jsp:include page="/view/admin/include/script.jsp"></jsp:include>
+        <div class="add-content">
 
+            <br>
+            <h2 align="center">Thêm User</h2>
+            <div class="add-table">
+                <div class="hr">
+                    <hr>
+                </div>
+                <form method="post" id="ha">
+                 	<input id="idInput" type="hidden" name="id" value="${user.id}">
+                    <label for="exampleInputName">Name</label>
+                    <input id="nameInput" type="text" name="name" value="${user.name}" required="">
+                    <div class="hr">
+                        <hr>
+                    </div>
+                    <label for="exampleInputUsername">Username</label>
+                    <input id="usernameInput" type="text" name="username" value="${user.username}" required="">
+                    <div class="hr">
+                        <hr>
+                    </div>
+                    <label for="exampleInputPassword">Password</label>
+                    <input id="passwordInput" type="password" name="password" class="lock" value="${user.password}">
+                    <div class="hr">
+                        <hr>
+                    </div>
+                    <label for="exampleInputRoll">Roll</label>
+                    <input id="roleAdmin" name="role" type="radio" value="ROLE_ADMIN">ADMIN
+                    <input name="role" type="radio" value="ROLE_USER">USER
+                    <div class="hr">
+                        <hr>
+                    </div>
+                    <label for="exampleInputAvatar">Avatar</label>
+                    <input type="file" name="avatar"> </br>
+                    <input type="button" name="addUser" id="submit" value="Submit" onclick="updateeUser()"> </br>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <c:url value="/static/admin/js/test.js" var="test"></c:url>
+    <script src="${test}"></script>
 </body>
+
 </html>

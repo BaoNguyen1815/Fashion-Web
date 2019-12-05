@@ -1,0 +1,143 @@
+
+.container{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    overflow: hidden;
+}
+.navbar{
+    display: block;
+    overflow: hidden;
+}
+.navbar div{
+    display: inline-block;
+    margin: 2% 2%;
+    float: right;
+}
+.navbar .logo{
+    float: left !important;
+}
+
+.banner{
+    width: 100%;
+    height: 150px;
+    background-color: #a7a7a7;
+    display: inline-block;
+}
+
+.banner .cart-icon{
+    margin-left: 10%;
+    margin-top: 100px;
+    float: left;
+    text-align: center;
+}
+
+.banner .cart-text{
+    margin-left: 2% ;
+    margin-top: 90px;
+
+    float: left;
+}
+.table-block{
+    width: 100%;
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 5% ;
+
+}
+.table{
+    width: 90%;
+}
+.table img{ 
+    margin-top: 5px ;  
+        max-height: 180px !important;
+        max-width: 120px !important;
+        
+}
+table, th, td {
+    margin-top: 15px ;
+    margin-bottom : 15px;
+    border-top: 1px solid black;
+ 
+}
+th{
+    height: 30px;
+}
+
+.product-name{
+    width: 55%;
+    float: left;
+}
+.product-name span{
+    float: left;
+}
+
+.product-img{
+    width: 160px !important;
+  
+}
+
+table input{
+    width: 100px;
+   
+}
+
+.payment{
+    width: 90%;
+    height: 200px !important;
+    text-align: center;
+    margin-top: 50px !important ;
+}
+
+.payment-price{
+    width: 60%;
+    float: left;
+    text-align: center;
+}
+.payment-btn{
+  
+
+    width: 40%;
+    float: left;
+}
+
+.payment-btn button{
+  height: 50px;
+  zoom: 1;
+  padding: 6px 20px;
+  margin: 0;
+  cursor: pointer;
+  border: 1px solid #bbb;
+  overflow: visible;
+  font: bold 13px arial, helvetica, sans-serif;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #555;
+  
+  background-color: #ddd;
+  
+  border-color: #57a957;
+}
+.payment-table{
+    margin-left: 10% ;
+}
+.footer{
+    clear: both;
+    /* margin-top: 100px ; */
+
+    width: 97%;
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    background-color: rgb(37, 36, 36);
+    padding: 20px !important;
+}
+.footer-content{
+    margin-left: 20px !important ;
+    
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 20px;
+    text-align: left;
+}
+
+

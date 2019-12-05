@@ -11,13 +11,13 @@ public interface UserService {
 
 	void delete(int id);
 
-	User get(String username);
+	public User get(String username);
 	
-	User get(int id);
+	public User get(int id);
 	
-	User login(String username, String password);
+	public User login(String username, String password);
 
-	List<User> getAll();
+	public List<User> getAll();
 
-	List<User> search(String keyword);
+	public List<User> search(String keyword);
 }
